@@ -3,6 +3,8 @@ library(stringr)
 library(taxonomizr)
 library(dplyr)
 library(ggsci)
+library(ggpubr)
+
 
 ##Script for processing Kraken2 read classifications
 # see kraken_script for commands to run kraken2
@@ -77,7 +79,7 @@ for (f in 1:length(files)){
 
 options(scipen=999, digits=1)
 
-ggplot(data = rsum, aes(x=barcode, 
+(percplot = ggplot(data = rsum, aes(x=barcode, 
                         y=readsUnique, 
                         fill = genus)
        ) +
@@ -91,16 +93,24 @@ ggplot(data = rsum, aes(x=barcode,
     axis.title = element_text(size = 8),
     legend.text = element_text(size = 8)
   ) + xlab('') + ylab('Relative Proportion of Plant Reads')
+)
+#gsave('Figure2.png', height=4, width = 7.25)
 
-ggsave('Figure2.png', height=4, width = 7.25)
 
-
-ggplot(data = rbuild) + 
+(readTotal = ggplot(data = rbuild) + 
   geom_col(aes(x=barcode, y=readsUnique)) +
   theme_linedraw() +
   ylab('Plant Classified Reads') + 
   xlab('')
+)
+#ggsave('Figure1.png', height=4, width = 7.25)
 
-ggsave('Figure1.png', height=4, width = 7.25)
 
+gsa = ggarrange(readTotal, percplot, ncol=1, nrow=2, labels="AUTO")
+ggsave(filename='Figure1.png', 
+       plot=gsa, 
+       device=NULL, 
+       width = 7.25, 
+       height=7.25, 
+       dpi=500)
 

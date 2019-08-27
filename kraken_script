@@ -1,0 +1,15 @@
+#/usr/bin/bash
+
+##Script for processing metabarcodes with Kraken2
+
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport01.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode01.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport02.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode02.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport03.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode03.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport04.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode04.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport05.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode05.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport06.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode06.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport07.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode07.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport08.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode08.fastq
+ kraken2 --db /usr/share/data/krakendb/nt-custom --threads 4 --use-names --report passkreport09.tab --fastq-input /usr/share/data/SURE/flongle/ITS2_barcode/fastq_pass/demult/barcode09.fastq
+
+
